@@ -1,0 +1,8 @@
+<span>
+    <i [ngClass]="{'fa': true, 'fa-heart': isFavorite, 'fa-heart-o': !isFavorite}" 
+       aria-hidden="true" 
+       [ngStyle]="{'color': isFavorite ? 'deeppink': '', 'cursor':'pointer'}" 
+       (click)="onClick()">
+    </i>
+</span>
+<span style="padding: 5px;">{{favCount}}</span>

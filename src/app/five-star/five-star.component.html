@@ -1,0 +1,13 @@
+<span *ngFor="let index of counter(defaultCounter); let i = index" 
+      (click)="displayRating(i + 1)"
+      (mouseover)="displayRating(i + 1)"
+      [ngStyle]="{'cursor': 'pointer', 'font-size': '20px'}">
+
+    <i *ngIf="evaluateIfConditionTrue(i + 1, ratingCounter); else emptyStar" class="fa fa-star star-full" 
+       aria-hidden="true">
+    </i>
+    <ng-template #emptyStar>
+        <i class="fa fa-star-o star-empty" aria-hidden="true"></i>
+    </ng-template>
+
+</span>

@@ -1,0 +1,15 @@
+<div class="card w-100" >
+    <div class="card-header" (click)="toggleDiv()">
+        <div class="row">
+            <div class="col-8 d-flex justify-content-start">
+                <ng-content select=".heading"></ng-content>
+            </div>
+            <div class="col-4 d-flex justify-content-end align-items-center">
+                <i [ngClass]="{'fa': true, 'fa-chevron-up': showDiv, 'fa-chevron-down': !showDiv }" aria-hidden="true" style="cursor:pointer"></i>
+            </div>
+        </div>
+    </div>
+    <div class="card-body" *ngIf="showDiv">
+        <ng-content select=".body"></ng-content>
+    </div>
+</div>

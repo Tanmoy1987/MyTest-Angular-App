@@ -7,6 +7,8 @@ import { FavoriteIconComponent } from './favorite-icon/favorite-icon.component';
 import { FiveStarComponent } from './five-star/five-star.component';
 import { RatingComponent } from './rating/rating.component';
 import { HomeComponent } from './home/home.component';
+import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { HomeComponent } from './home/home.component';
     FavoriteIconComponent,
     FiveStarComponent,
     RatingComponent,
-    HomeComponent
+    HomeComponent,
+    BootstrapPanelComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,

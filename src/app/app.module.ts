@@ -9,6 +9,10 @@ import { RatingComponent } from './rating/rating.component';
 import { HomeComponent } from './home/home.component';
 import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
 import { PanelComponent } from './panel/panel.component';
+import { TitlecaseComponent } from './titlecase/titlecase.component';
+import { FormsModule } from '@angular/forms';
+import { PascalCasePipe } from './custom-pipe/pascalcase.pipe';
+
 
 @NgModule({
   declarations: [
@@ -18,11 +22,14 @@ import { PanelComponent } from './panel/panel.component';
     RatingComponent,
     HomeComponent,
     BootstrapPanelComponent,
-    PanelComponent
+    PanelComponent,
+    TitlecaseComponent,
+    PascalCasePipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,6 +13,7 @@ import { TitlecaseComponent } from './titlecase/titlecase.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PascalCasePipe } from './custom-pipe/pascalcase.pipe';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     PanelComponent,
     TitlecaseComponent,
     PascalCasePipe,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -10,8 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
 import { PanelComponent } from './panel/panel.component';
 import { TitlecaseComponent } from './titlecase/titlecase.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PascalCasePipe } from './custom-pipe/pascalcase.pipe';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 @NgModule({
@@ -24,12 +25,14 @@ import { PascalCasePipe } from './custom-pipe/pascalcase.pipe';
     BootstrapPanelComponent,
     PanelComponent,
     TitlecaseComponent,
-    PascalCasePipe
+    PascalCasePipe,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

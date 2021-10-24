@@ -21,5 +21,4 @@ export class PascalCasePipe implements PipeTransform {
     }
     return formattedStr;
   }
-
 }

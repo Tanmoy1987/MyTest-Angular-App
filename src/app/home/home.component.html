@@ -1,1 +1,13 @@
-<p>home works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="[{ outlets: { 'sub': ['followers'] } }]" routerLinkActive="active">Followers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="[{ outlets: { 'sub': ['posts'] } }]" routerLinkActive="active">Post</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<router-outlet name="sub"></router-outlet>

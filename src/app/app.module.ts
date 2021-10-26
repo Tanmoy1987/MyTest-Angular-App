@@ -14,6 +14,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PascalCasePipe } from './custom-pipe/pascalcase.pipe';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { FollowersComponent } from './followers/followers.component';
+import { PostComponent } from './post/post.component';
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import { LoginComponent } from './login/login.component';
     TitlecaseComponent,
     PascalCasePipe,
     ChangePasswordComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent,
+    FollowersComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,10 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { FollowersComponent } from './followers/followers.component';
 import { PostComponent } from './post/post.component';
+import { PostService } from './service/post.service';
+import { FollowerService } from './service/follower.service';
+import { HttpClientModule } from '@angular/common/http';
+import { AppErrorHandler } from './error-handler/app-error-handler';
 
 
 @NgModule({
@@ -40,9 +44,14 @@ import { PostComponent } from './post/post.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    PostService,
+    FollowerService,
+    { provide: ErrorHandler, useClass: AppErrorHandler }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

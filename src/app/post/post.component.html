@@ -1,1 +1,40 @@
-<p>post works!</p>
+<input type="text" class="form-control mb-2 mt-2" #postTitle (keyup.enter)="createPost(postTitle)"/>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let post of posts">
+        <input type="button" 
+               value="Update" 
+               class="btn btn-primary me-1" 
+               (click)="populatePostTitle(post)"
+               data-bs-toggle="modal" 
+               data-bs-target="#updatePostTitleModal"/>
+        <input type="button" 
+               value="Delete" 
+               class="btn btn-secondary me-1" 
+               (click)="deletePost(post)" />
+        <span class="ms-1">{{post.title}}</span>
+    </li>
+</ul>
+<div class="modal fade" 
+        id="updatePostTitleModal" 
+        tabindex="-1" 
+        aria-labelledby="updatePostTitleModalLabel" 
+        aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Update Post Title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" class="form-control" [(ngModel)]="updatedPost.postTitle"/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal" 
+                  (click)="updatePost(updatedPost)">
+              Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

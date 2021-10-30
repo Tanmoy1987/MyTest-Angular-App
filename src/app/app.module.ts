@@ -19,8 +19,12 @@ import { FollowersComponent } from './followers/followers.component';
 import { PostComponent } from './post/post.component';
 import { PostService } from './service/post.service';
 import { FollowerService } from './service/follower.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppErrorHandler } from './error-handler/app-error-handler';
+import { GithubProfileComponent } from './github-profile/github-profile.component';
+import { AuthenticateService } from './service/authenticate.service';
+import { fakeBackendFactory } from './fake-backend/fake-backend';
+import { AuthGuard } from './service/auth-guard.service';
 
 
 @NgModule({
@@ -38,7 +42,8 @@ import { AppErrorHandler } from './error-handler/app-error-handler';
     LoginComponent,
     LogoutComponent,
     FollowersComponent,
-    PostComponent
+    PostComponent,
+    GithubProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,10 @@ import { AppErrorHandler } from './error-handler/app-error-handler';
   providers: [
     PostService,
     FollowerService,
-    { provide: ErrorHandler, useClass: AppErrorHandler }
+    AuthenticateService,
+    AuthGuard,
+    { provide: ErrorHandler, useClass: AppErrorHandler },
+    { provide: HTTP_INTERCEPTORS, useClass: fakeBackendFactory, multi: true}
   ],
   bootstrap: [AppComponent]
 })

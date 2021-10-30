@@ -21,3 +21,9 @@ div.form-group {
 .border-highlight {
     border: 1px solid red;
 }
+
+.invalidLoginText {
+    color: red; 
+    font-size: small; 
+    text-align: center;
+}

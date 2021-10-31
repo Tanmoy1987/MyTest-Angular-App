@@ -8,6 +8,7 @@ export class fakeBackendFactory implements HttpInterceptor {
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         if(request.url.endsWith("api/authenticate") && request.method === "POST") {
+            //this.delay(4000);
             if(this.authenticate(request.body))
                return of(new HttpResponse({ body: {'token': this.token}}));
             return of(new HttpResponse({ body: {'token': null}}));
@@ -31,5 +32,13 @@ export class fakeBackendFactory implements HttpInterceptor {
 
     private authenticate(body: any) : boolean{
         return (body.username === "tanmoy" && body.password === "1234")
+    }
+
+    async delay(ms: number) {
+        await new Promise(resolve => {
+            setTimeout(() => { 
+                resolve (1); 
+            }, ms);
+        }).then(()=> {console.log('delay '+ ms + " ms")});
     }
 }

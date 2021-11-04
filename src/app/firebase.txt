@@ -1,0 +1,11 @@
+> firebase console: https://console.firebase.google.com
+> google platform to host web/mobile applications
+> provides built-in backend capabilities to create the database for your application.
+> uses NoSQL format to create the database.
+> NoSQL: creates the data in a node-based format.
+> install firebase
+    npm install firebase angularfire2 --save
+> copy the firebase project/db configuration into your environment.ts file
+> import the AngularFireModule into your app.module.ts file and initialize. 
+> import AngularFireDatabaseModule as well
+

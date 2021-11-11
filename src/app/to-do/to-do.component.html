@@ -1,0 +1,11 @@
+<div @todosAnimation>
+    <h1>To Do Items...</h1>
+    <input type="text" class="form-control mb-2 mt-2" #toDoItem (keyup.enter)="addToDoItem(toDoItem)"/>
+    <ul class="list-group">
+        <li @todoAnimation class="list-group-item cursor-pointer" *ngFor="let item of toDoItems"
+            (click)="removeToDoItem(item)">
+            <span>{{item}} </span>
+        </li>
+    </ul>
+</div>
+

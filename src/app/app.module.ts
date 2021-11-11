@@ -1,6 +1,6 @@
 import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FavoriteIconComponent } from './favorite-icon/favorite-icon.component';
@@ -25,6 +25,7 @@ import { GithubProfileComponent } from './github-profile/github-profile.componen
 import { AuthenticateService } from './service/authenticate.service';
 import { fakeBackendFactory } from './fake-backend/fake-backend';
 import { AuthGuard } from './service/auth-guard.service';
+import { ToDoComponent } from './to-do/to-do.component';
 
 
 @NgModule({
@@ -43,10 +44,12 @@ import { AuthGuard } from './service/auth-guard.service';
     LogoutComponent,
     FollowersComponent,
     PostComponent,
-    GithubProfileComponent
+    GithubProfileComponent,
+    ToDoComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,

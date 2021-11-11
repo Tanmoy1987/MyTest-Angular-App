@@ -10,6 +10,7 @@ import { PostComponent } from './post/post.component';
 import { RatingComponent } from './rating/rating.component';
 import { AuthGuard } from './service/auth-guard.service';
 import { TitlecaseComponent } from './titlecase/titlecase.component';
+import { ToDoComponent } from './to-do/to-do.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'rating', component: RatingComponent, canActivate: [AuthGuard]},
   {path: 'panel', component: PanelComponent, canActivate: [AuthGuard]},
   {path: 'title', component: TitlecaseComponent, canActivate: [AuthGuard]},
+  {path: 'todo', component: ToDoComponent, canActivate: [AuthGuard]},
   {path: 'change-password', component: ChangePasswordComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: '', pathMatch: 'full', redirectTo: 'home'}

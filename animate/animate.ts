@@ -1,4 +1,4 @@
-import { transition, trigger, animate, style, useAnimation, query, group, animation, keyframes, stagger, animateChild } from "@angular/animations";
+import { transition, trigger, animate, style, useAnimation, query, group, animation, keyframes, stagger, animateChild, state } from "@angular/animations";
 
 export let fadeInAnimation= animation(
     animate(1000, style({ opacity: 0}))
@@ -41,6 +41,37 @@ export const todosAnimationTrigger = trigger('todosAnimation', [
     transition(':leave', [
         style({ background: "orange"}),
         useAnimation(bounceLeftAnimation)
+    ])
+])
+
+export const expandCollapseTrigger2=  trigger('expandCollapse', [
+    transition(':enter', [
+      style({background: 'yellow', opacity: 0}),
+      animate('1000ms ease-out')
+    ]),
+    transition(':leave', [
+      animate('1000ms ease-in', style({opacity: 0}))
+      //animate('300ms', style({background: 'yellow'}))
+    ])
+  ])
+export const expandCollapseTrigger= trigger('expandCollapse', [
+   state('collapsed', style({
+       height: 0,
+       overflow: 'hidden',
+       paddingTop: 0,
+       paddingBottom: 0,
+       opacity: 0
+   })),
+   transition(':enter', [
+    style({background: 'yellow', opacity: 0}),
+    animate('1000ms ease-out')
+   ]),
+    transition('collapsed => expanded', [
+        style({ background: 'yellow'}),
+        animate('1000ms ease-out')
+    ]),
+    transition('expanded => collapsed', [
+        animate('1000ms ease-in', style({ background: 'yellow'}))
     ])
 ])
 

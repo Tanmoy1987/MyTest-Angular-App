@@ -9,7 +9,7 @@
             </div>
         </div>
     </div>
-    <div class="card-body" *ngIf="showDiv">
+    <div [@expandCollapse] = "showDiv ? 'expanded': 'collapsed'" class="card-body">
         <ng-content select=".body"></ng-content>
     </div>
 </div>

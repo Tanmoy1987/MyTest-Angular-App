@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { PascalCasePipe } from '../custom-pipe/pascalcase.pipe';
 
 import { TitlecaseComponent } from './titlecase.component';
 
@@ -8,7 +9,7 @@ describe('TitlecaseComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TitlecaseComponent ]
+      declarations: [ TitlecaseComponent, PascalCasePipe ]
     })
     .compileComponents();
   });

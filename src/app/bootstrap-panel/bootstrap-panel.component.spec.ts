@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { BootstrapPanelComponent } from './bootstrap-panel.component';
 
@@ -8,6 +9,7 @@ describe('BootstrapPanelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [BrowserAnimationsModule],
       declarations: [ BootstrapPanelComponent ]
     })
     .compileComponents();

@@ -6,8 +6,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./favorite-icon.component.css']
 })
 export class FavoriteIconComponent implements OnInit {
-  @Input() favCount?: number;
+  @Input() totalLikes: number =0
   @Input() isFavorite?: boolean;
+  myLike?: number=0;
 
   constructor() { }
 
@@ -16,7 +17,7 @@ export class FavoriteIconComponent implements OnInit {
 
   onClick(){  
     this.isFavorite = !this.isFavorite;
-    if(this.favCount != undefined)
-       this.favCount += this.isFavorite ? +1 : -1;
+    this.myLike == 0? 1 : 0;
+    this.totalLikes += this.isFavorite ? +1 : -1; 
   }
 }

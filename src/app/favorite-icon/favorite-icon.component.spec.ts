@@ -36,5 +36,18 @@ describe('FavoriteIconComponent', () => {
     fixture.detectChanges();
 
     expect(el.innerText).toContain("11");
-  })
+  });
+
+  it('should decrease like count if already clicked', () => {
+    component.totalLikes = 10;
+    component.myLike= 1;
+    let de= fixture.debugElement.queryAll(By.css('span'))[1];
+    let el: HTMLElement = de.nativeElement;
+
+    
+    component.onClick();
+    fixture.detectChanges();
+
+    expect(el.innerText).toContain("9");
+  });
 });

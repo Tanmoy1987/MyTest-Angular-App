@@ -1,0 +1,14 @@
+{
+    "fruits": [
+        {"id": 1, "name": "Mango"},
+        {"id": 2, "name": "Apple"},
+        {"id": 3, "name": "Banana"},
+        {"id": 4, "name": "Pumpkin"},
+        {"id": 5, "name": "Melon"},
+        {"id": 6, "name": "Kiwi"},
+        {"id": 7, "name": "Apricot"},
+        {"id": 8, "name": "Carrot"},
+        {"id": 9, "name": "Grapes"},
+        {"id": 10, "name": "Pineapple"}
+    ]
+}

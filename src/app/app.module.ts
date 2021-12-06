@@ -26,6 +26,9 @@ import { AuthenticateService } from './service/authenticate.service';
 import { fakeBackendFactory } from './fake-backend/fake-backend';
 import { AuthGuard } from './service/auth-guard.service';
 import { ToDoComponent } from './to-do/to-do.component';
+import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
+import { FruitService } from './service/fruit.service';
+import { FilterPipe } from './custom-pipe/filter.pipe';
 
 
 @NgModule({
@@ -45,7 +48,9 @@ import { ToDoComponent } from './to-do/to-do.component';
     FollowersComponent,
     PostComponent,
     GithubProfileComponent,
-    ToDoComponent
+    ToDoComponent,
+    AutoCompleteComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -58,6 +63,7 @@ import { ToDoComponent } from './to-do/to-do.component';
   providers: [
     PostService,
     FollowerService,
+    FruitService,
     AuthenticateService,
     AuthGuard,
     { provide: ErrorHandler, useClass: AppErrorHandler },

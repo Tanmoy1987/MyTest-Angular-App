@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AutoCompleteComponent } from './auto-complete/auto-complete.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { FollowersComponent } from './followers/followers.component';
 import { GithubProfileComponent } from './github-profile/github-profile.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'title', component: TitlecaseComponent, canActivate: [AuthGuard]},
   {path: 'todo', component: ToDoComponent, canActivate: [AuthGuard]},
   {path: 'change-password', component: ChangePasswordComponent, canActivate: [AuthGuard]},
+  {path: 'auto-complete', component: AutoCompleteComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: '', pathMatch: 'full', redirectTo: 'home'}
 ];

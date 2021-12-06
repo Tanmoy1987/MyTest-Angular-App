@@ -1,0 +1,16 @@
+<div class="w-25">
+    <input class="mb-0 px-2 w-100 border-0 border-bottom border-dark" 
+           placeholder="Find..." 
+           (click)="hideDiv=!hideDiv" 
+           [(ngModel)]="inputValue" />
+    <div class="p-0 w-100 ddl-option" [hidden]="hideDiv">
+        <ul class="list-group" *ngFor="let lv of listofValues | filter:inputValue">
+            <li *ngIf="lv !=''; else noDataToDisplay" class="list-group-item pb-0 pt-0 border-0" (click)="inputValue=lv; hideDiv=true">
+                 {{lv}}
+            </li>
+            <ng-template #noDataToDisplay>
+                <span style="background-color: lightgray;">No Data To Display</span>
+             </ng-template>
+        </ul>
+    </div>
+</div>

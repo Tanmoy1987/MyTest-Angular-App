@@ -1,0 +1,14 @@
+input:focus {
+  outline: 0;
+}
+::placeholder{
+  font-style: italic;
+  font-size: larger;
+}
+.ddl-option {
+  border-bottom: 1px solid gray;
+  cursor: pointer;
+}
+li:hover {
+  background-color: rgb(164, 222, 230);
+}
